@@ -64,14 +64,16 @@
 	</div>
 
 	<script type="text/javascript">
+		// alert("Success");
 		$(document).ready(function(){
-
+			// alert("Success");
 			fetch_data();
-
+			// alert("Success");
 			function fetch_data(){
 				$.ajax({
 					url:"fetch.php",
 					success: function(data){
+						// alert("Success");
 						$('tbody').html(data);
 					}
 				})
@@ -84,45 +86,46 @@
 			    $('#apicrudModal').modal('show');
 			});
 
-			$('#api_crud_form').on('submit', function(event){
-				event.preventDefault();
-				if($('first_name').val() == ''){
-					alert("Enter First Name");
-				}else if($('last_name').val() == ''){
-					alert("Enter Last Name");
-				}else{
-					var form_data = $(this).serialize();
-					$.ajax({
-						url "action.php",
-						method: "POST",
-						data: form_data,
-						success: function(data){
-							fetch_data();
-							$('#api_crud_form')[0].reset();
-							$('#apicrudModal').modal('hide');
-							if(data == 'insert'){
-								alert("Data Inserted using PHP API")
-							}
-							if(data == 'update'){
-						      alert("Data Updated using PHP API");
-						    }
-						}
-					});
-				}
-			});
+			// $('#api_crud_form').on('submit', function(event){
+			// 	event.preventDefault();
+			// 	if($('first_name').val() == ''){
+			// 		alert("Enter First Name");
+			// 	}else if($('last_name').val() == ''){
+			// 		alert("Enter Last Name");
+			// 	}else{
+			// 		var form_data = $(this).serialize();
+			// 		$.ajax({
+			// 			url "action.php",
+			// 			method: "POST",
+			// 			data: form_data,
+			// 			success: function(data){
+			// 				fetch_data();
+			// 				$('#api_crud_form')[0].reset();
+			// 				$('#apicrudModal').modal('hide');
+			// 				if(data == 'insert'){
+			// 					alert("Data Inserted using PHP API")
+			// 				}
+			// 				if(data == 'update'){
+			// 			      alert("Data Updated using PHP API");
+			// 			    }
+			// 			}
+			// 		});
+			// 	}
+			// });
 		});
 	</script>
-	<!--<script type="text/javascript">
+	<!-- <script type="text/javascript">
 $(document).ready(function(){
 
  fetch_data();
-
+ alert("Suceess");
  function fetch_data()
  {
   $.ajax({
    url:"fetch.php",
    success:function(data)
    {
+	   alert("Suceess");
     $('tbody').html(data);
    }
   })
@@ -170,7 +173,7 @@ $(document).ready(function(){
   }
  });
 
-</script>-->
+</script> -->
 </body>
 
 </html>
