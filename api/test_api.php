@@ -10,5 +10,9 @@
 		$data= $api_object->fetch_all();
 	}
 
+	if($_GET["action"] == 'insert'){
+		$data= $api_object->insert();
+	}
+
 	echo json_encode($data);
 ?>

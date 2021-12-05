@@ -24,6 +24,32 @@
 				return $data;
 			}
 		}
+
+		function insert(){
+			if(isset($_POST["first_name"])){
+				$form_data = array(
+					':first_name' => $_POST["first_name"],
+   
+					':last_name' => $_POST["last_name"]
+				);
+				$query = "INSERT INTO tbl_sample (first_name, last_name) VALUES (:first_name, :last_name)";
+				$statement = $this->connect->prepare($query);
+
+				if($statement->execute($form_data)){
+					$data[] = array(
+						'success' => '1'
+					);
+				}
+				else{
+					$data[] = array(
+						'success' => '0'
+					);
+				}
+			}
+			else{
+				
+			}
+		}
 	}
 
 ?>

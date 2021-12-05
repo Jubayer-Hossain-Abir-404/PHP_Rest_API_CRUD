@@ -39,8 +39,8 @@
 			<div class="modal-content">
 				<form method="post" id="api_crud_form">
 				    <div class="modal-header">
-				        <button type="button" class="close" data-dismiss="modal">&times;</button>
 				        <h4 class="modal-title">Add Data</h4>
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
 				    </div>
 				    <div class="modal-body">
 				        <div class="form-group">
@@ -86,32 +86,32 @@
 			    $('#apicrudModal').modal('show');
 			});
 
-			// $('#api_crud_form').on('submit', function(event){
-			// 	event.preventDefault();
-			// 	if($('first_name').val() == ''){
-			// 		alert("Enter First Name");
-			// 	}else if($('last_name').val() == ''){
-			// 		alert("Enter Last Name");
-			// 	}else{
-			// 		var form_data = $(this).serialize();
-			// 		$.ajax({
-			// 			url "action.php",
-			// 			method: "POST",
-			// 			data: form_data,
-			// 			success: function(data){
-			// 				fetch_data();
-			// 				$('#api_crud_form')[0].reset();
-			// 				$('#apicrudModal').modal('hide');
-			// 				if(data == 'insert'){
-			// 					alert("Data Inserted using PHP API")
-			// 				}
-			// 				if(data == 'update'){
-			// 			      alert("Data Updated using PHP API");
-			// 			    }
-			// 			}
-			// 		});
-			// 	}
-			// });
+			$('#api_crud_form').on('submit', function(event){
+				event.preventDefault();
+				if($('#first_name').val() == ''){
+					alert("Enter First Name");
+				}else if($('#last_name').val() == ''){
+					alert("Enter Last Name");
+				}else{
+					var form_data = $(this).serialize(); //this will convert form data to url encoded string
+					$.ajax({
+						url: "action.php",
+						method: "POST",
+						data: form_data,
+						success: function(data){
+							fetch_data();
+							$('#api_crud_form')[0].reset();
+							$('#apicrudModal').modal('hide');
+							if(data == 'insert'){
+								alert("Data Inserted using PHP API");
+							}
+							if(data == 'update'){
+						      alert("Data Updated using PHP API");
+						    }
+						}
+					});
+				}
+			});
 		});
 	</script>
 	<!-- <script type="text/javascript">
