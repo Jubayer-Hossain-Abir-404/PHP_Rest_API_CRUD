@@ -53,6 +53,18 @@
 			}
 			return $data;
 		}
+
+		function fetch_single($id){
+			$query = "SELECT * FROM tbl_sample WHERE id='".$id."'";
+			$statement = $this->connect->prepare($query);
+			if($statement->execute()){
+				foreach($statement->fetchAll() as $row){
+					$data['first_name'] = $row['first_name'];
+					$data['last_name'] = $row['last_name'];
+				}
+				return $data;
+			}
+		}
 	}
 
 ?>

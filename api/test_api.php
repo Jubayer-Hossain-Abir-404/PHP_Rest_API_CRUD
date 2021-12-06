@@ -14,5 +14,9 @@
 		$data= $api_object->insert();
 	}
 
+	if($_GET["action"] == 'fetch_single'){
+		$data = $api_object->fetch_single($_GET["id"]);
+	}
+
 	echo json_encode($data);
 ?>
