@@ -47,8 +47,11 @@
 				}
 			}
 			else{
-				
+				$data[] = array(
+					'success' => '0'
+				);
 			}
+			return $data;
 		}
 	}
 
