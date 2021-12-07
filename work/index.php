@@ -122,8 +122,8 @@
 					dataType: "json",
 					success:function(data){
 						$('#hidden_id').val(id);
-						$('first_name').val(data.first_name);
-						$('last_name').val(data.last_name);
+						$('#first_name').val(data.first_name);
+						$('#last_name').val(data.last_name);
 						$('#action').val('update');
 						$('#button_action').val('Update');
 						$('.modal-title').text('Edit Data');

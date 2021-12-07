@@ -18,8 +18,8 @@
 				<tr>
 					<td>'.$row->first_name.'</td>
 					<td>'.$row->last_name.'</td>
-					<td><buton type="button" name="edit" class="btn btn-warning btn-xs edit" id="'.$row->id.'">Edit</button></td>
-					<td><buton type="button" name="delete" class="btn btn-danger btn-xs delete" id="'.$row->id.'">Delete</button></td>
+					<td><button type="button" name="edit" class="btn btn-warning edit" id="'.$row->id.'">Edit</button></td>
+					<td><button type="button" name="delete" class="btn btn-danger delete" id="'.$row->id.'">Delete</button></td>
 				</tr>
 			';
 		}
