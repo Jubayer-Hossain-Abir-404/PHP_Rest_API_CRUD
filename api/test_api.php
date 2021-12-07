@@ -18,5 +18,9 @@
 		$data = $api_object->fetch_single($_GET["id"]);
 	}
 
+	if($_GET["action"] == 'update'){
+		$data = $api_object->update(); 
+	}
+
 	echo json_encode($data);
 ?>

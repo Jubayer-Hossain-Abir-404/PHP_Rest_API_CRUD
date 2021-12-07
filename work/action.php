@@ -45,9 +45,9 @@
 		$form_data = array(
 		'first_name' => $_POST['first_name'],
 		'last_name'  => $_POST['last_name'],
-		'id'   => $_POST['hidden_id']
+		'id'   		 => $_POST['hidden_id']
 		);
-		$api_url = "http://localhost/Rest_API_CRUD/api/test_api.ph?action=update";
+		$api_url = "http://localhost/Rest_API_CRUD/api/test_api.php?action=update";
 		$client = curl_init($api_url);
 		curl_setopt($client, CURLOPT_POST, true);
 		curl_setopt($client, CURLOPT_POSTFIELDS, $form_data);
@@ -57,14 +57,14 @@
 		$result = json_decode($response, true);
 		foreach($result as $keys => $values)
 		{
-		if($result[$keys]['success'] == '1')
-		{
-			echo 'update';
-		}
-		else
-		{
-			echo 'error';
-		}
+			if($result[$keys]['success'] == '1')
+			{
+				echo 'update';
+			}
+			else
+			{
+				echo 'error';
+			}
 		}
 
 	 
