@@ -97,6 +97,23 @@
 			}
 			return $data;
 		}
+
+		function delete($id){
+			$query = "DELETE FROM tbl_sample WHERE id='".$id."'";
+			$statement = $this->connect->prepare($query);
+			if($statement->execute()){
+				$data[] = array(
+					'success' => '1'
+				);
+			}
+			else{
+				$data[] = array(
+					'success' => '0'
+				);
+			}
+
+			return $data;
+		}
 	}
 
 ?>
